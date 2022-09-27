@@ -1,5 +1,3 @@
-let bookingUrl = `http://${window.location.host}/api/booking`;
-
 const checkPermission = async () => {
   let data = await fetch("/api/user").then((res) => res.json());
   if (data == null) {
@@ -15,6 +13,24 @@ const deleteReservation = async () => {
 const isReservation = async () => {
   let result = await fetch("/api/booking").then((res) => res.json());
   return result;
+};
+
+const useContactInfo = async () => {
+  if (document.getElementById("checkTick").style.display == "none") {
+    document.getElementById("checkTick").style.display = "block";
+    let data = await fetch("/api/user/contact").then((res) => res.json());
+    const contactName = data.contact.name;
+    const contactEmail = data.contact.email;
+    const contactPhone = data.contact.phone;
+    document.getElementById("contactPersonInput").value = contactName;
+    document.getElementById("contactEmailInput").value = contactEmail;
+    document.getElementById("contactNumberInput").value = contactPhone;
+  } else {
+    document.getElementById("checkTick").style.display = "none";
+    document.getElementById("contactPersonInput").value = "";
+    document.getElementById("contactEmailInput").value = "";
+    document.getElementById("contactNumberInput").value = "";
+  }
 };
 
 const whichRender = async (data) => {
@@ -90,7 +106,7 @@ const renderBookingPage = (bookingInfo) => {
 };
 
 const init = async () => {
-  await fetch(bookingUrl)
+  await fetch("/api/booking")
     .then((res) => res.json())
     .then(whichRender);
   renderUserName();

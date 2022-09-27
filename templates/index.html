@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="../static/css/authenticationStyle.css" />
+    <link rel="stylesheet" href="../static/css/loadingStyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +19,12 @@
       <nav class="nav">
         <a id="bookingTour" onclick="loginOrBooking()">預定行程</a>
         <a id="loginOrSignup"></a>
+        <input
+          id="memberIcon"
+          type="image"
+          onclick="toMemberPage()"
+          src="../static/images/icon_user.png"
+        />
       </nav>
     </header>
     <main>
@@ -40,7 +47,7 @@
         </div>
       </div>
     </main>
-    <section class="spots">
+    <section id="spotsSection" class="spots">
       <div id="photoBox" class="photoBox"></div>
     </section>
     <footer>
@@ -132,7 +139,8 @@
         </div>
       </div>
     </div>
-    <script src="../static/js/script.js"></script>
+    <script type="module" src="../static/js/loadingScript.js"></script>
+    <script type="module" src="../static/js/script.js"></script>
     <script src="../static/js/authentication.js"></script>
   </body>
 </html>

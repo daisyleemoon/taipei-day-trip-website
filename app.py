@@ -3,7 +3,6 @@ from api.api import api
 from api.user import user
 from api.booking import booking_api
 from api.orders import orders
-from db_connection import connection_pool, db, cursor
 from dotenv import load_dotenv
 from os import environ, path
 
@@ -42,6 +41,11 @@ def booking():
 @app.route("/thankyou")
 def thankyou():
     return render_template("thankyou.html")
+
+
+@app.route("/member")
+def member():
+    return render_template("member.html")
 
 
 if __name__ == "__main__":

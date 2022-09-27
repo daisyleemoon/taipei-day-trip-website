@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  padding: auto;
+  display: grid;
+  height: 54px;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+}
+.nav {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-self: end;
+  grid-auto-flow: column;
+  align-self: center;
+}
+.nav a {
+  margin: 0;
+  padding: 0 10px;
+  display: grid;
+  font-size: 1rem;
+  color: #666666;
+  justify-self: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.home {
+  text-decoration: none;
+  margin: 0;
+  color: #448899;
+  display: grid;
+  align-self: center;
+  justify-self: start;
+  font-weight: bold;
+  font-size: 1.875rem;
+  line-height: 34px;
+  cursor: pointer;
+}
+#memberIcon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+article {
+  margin-top: 54px;
+}
+#memberDiv,
+#contactDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#memberContactTitle,
+#memberInfoTitle {
+  font-weight: 700;
+  font-size: 19px;
+}
+#memberInfoDiv,
+#editPasswordForm,
+#contactInfoDiv,
+#editContactForm {
+  margin-bottom: 35px;
+  height: auto;
+}
+#memberInfoDiv p,
+#contactInfoDiv p {
+  color: #666666;
+}
+#passwordLabel,
+#newPasswordLabel,
+#checkPasswordLabel,
+#contactNameLabel,
+#contactEmailLabel,
+#contactPhoneLabel {
+  color: #666666;
+  width: 81px;
+  height: 24px;
+  display: inline;
+  box-sizing: border-box;
+}
+#originalPassword,
+#newPassword,
+#checkPassword,
+#contactNameInput,
+#contactEmailInput,
+#contactPhoneInput {
+  border-radius: 5px;
+  border: #e8e8e8 solid 1px;
+  width: 200px;
+  height: 38px;
+  margin: 0 0 15px 0;
+}
+#originalPassword:focus,
+#newPassword:focus,
+#checkPassword:focus,
+#contactNameInput:focus,
+#contactEmailInput:focus,
+#contactPhoneInput:focus {
+  outline: none;
+  border: 1px solid #448899;
+  box-shadow: 0 0 5px #66aabb;
+}
+
+#editPasswordResult {
+  color: #448899;
+}
+
+#editPasswordBtn,
+#editContactBtn,
+#toEditPasswordBtn,
+#toEditContactBtn {
+  cursor: pointer;
+  width: 154px;
+  height: 36px;
+  border: #448899;
+  background: #448899;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.19rem;
+  text-align: center;
+}
+#editPasswordForm,
+#editContactForm {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+#memberOrderInfo {
+  color: #666666;
+}
+#memberOrderInfo p {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+#memberOrderInfo table {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#memberOrderInfo table td,
+#memberOrderInfo table th,
+#memberOrderInfo table tr {
+  border: transparent;
+}
+#memberOrderInfo table tr:nth-child(even) {
+  background-color: #ddd;
+}
+hr {
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+}
+
+footer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background: #757575;
+}
+
+@media screen and (min-width: 1201px) {
+  header {
+    grid-template-columns: auto 600px 600px auto;
+    box-sizing: border-box;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+  }
+  .nav {
+    grid-column: 3/ 4;
+  }
+  .home {
+    grid-column: 2/ 3;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: auto 1200px auto;
+    place-items: center;
+  }
+  article {
+    display: grid;
+    grid-template-columns: auto 600px 600px auto;
+    place-items: center;
+  }
+  #memberDiv {
+    align-self: start;
+    grid-column: 2/3;
+  }
+  #contactDiv {
+    align-self: start;
+    grid-column: 3/4;
+  }
+
+  hr {
+    width: 1200px;
+    grid-column: 2/3;
+  }
+  #memberOrderInfo {
+    display: grid;
+    width: 1200px;
+    grid-column: 2/3;
+    place-items: center;
+  }
+  #memberOrderInfo p {
+    width: 1200px;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 1200px) {
+  header {
+    grid-template-columns: auto 45% 45% auto;
+    box-sizing: border-box;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+  }
+  .nav {
+    grid-column: 3/ 4;
+  }
+  .home {
+    grid-column: 2/ 3;
+  }
+  section {
+    display: grid;
+    grid-template-columns: auto 90% auto;
+  }
+  article {
+    display: grid;
+    grid-template-columns: auto 45% 45% auto;
+    place-items: center;
+  }
+  #memberDiv {
+    grid-column: 2/3;
+  }
+  #contactDiv {
+    grid-column: 3/4;
+  }
+
+  #memberOrderInfo {
+    display: grid;
+    width: 100%;
+    grid-column: 2/3;
+    place-items: center;
+  }
+  #memberOrderInfo p {
+    width: 100%;
+  }
+  hr {
+    width: 100%;
+    grid-column: 2/3;
+  }
+}
+@media screen and (max-width: 750px) {
+  header {
+    position: fixed;
+    padding: 0;
+    grid-template-columns: auto auto;
+    z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .nav {
+    margin: 0;
+    padding: 0;
+    grid-column: 2/ 3;
+  }
+  .home {
+    font-size: 1.55rem;
+    margin-left: 10px;
+    grid-column: 1/ 2;
+  }
+  section {
+    padding: 10px;
+    display: grid;
+    place-items: center start;
+  }
+  article {
+    display: grid;
+    grid-template-columns: auto 60% auto;
+    place-items: center;
+  }
+  #memberDiv,
+  #contactDiv {
+    width: 100%;
+    padding: 0 10px;
+    grid-column: 2/3;
+  }
+  hr {
+    width: 100%;
+  }
+}
