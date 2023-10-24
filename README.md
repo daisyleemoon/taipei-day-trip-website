@@ -2,7 +2,7 @@
 
 A tour website for finding and booking sightseeing tours, attractions for amazing Taipei.
 
-[(http://3.235.211.239/)](http://3.235.211.239/)
+
 
 ## Demonstration Video
 
